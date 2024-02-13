@@ -1,0 +1,73 @@
+$f: #EE204D
+*
+    padding: 0
+    margin: 0
+    outline: none
+    appearance: none
+html
+    font-size: 10px
+    color: #fff 
+    font-family: 'Arial',sans-serif
+body
+    background: #000
+.container
+    width: 100%
+    min-height: 100vh
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+.heart
+    position: relative
+    width: 20rem
+    height: 20rem
+    background: $f
+    transform: rotate(45deg)
+    &::before, &::after
+        content: ""
+        display: block
+        position: absolute
+        top: 0
+        width: 100%
+        height: 100%
+        background: $f
+        border-radius: 50%
+    &::before
+        left: -50%
+    &::after
+        top: -50%
+.beat-on
+    animation: beat 1s infinite
+    animation-delay: 0.5s
+    &::before, &::after
+        animation: asd 1s infinite
+        animation-delay: 0.5s
+#text
+    margin-top: 10rem
+    font-size: 2.5rem
+    transition: 0.3s ease-in
+    transform: translateY(-200%)
+    opacity: 0
+.appearance
+    transform: translateY(0) !important
+    opacity: 1 !important
+@keyframes beat
+    0%
+        transform: rotate(45deg) scale(1.1)
+        box-shadow: 0 0 5px $f, 0 0 15px $f 
+    25%
+        transform: rotate(45deg) scale(1.3)
+        box-shadow: 0 0 5px $f, 0 0 30px $f
+    100%
+        transform: rotate(45deg) scale(1.2)
+        box-shadow: 0 0 5px $f, 0 0 20px $f
+@keyframes asd
+    0%
+       box-shadow: 0 0 5px $f, 0 0 15px $f  
+    25%
+        box-shadow: 0 0 5px $f, 0 0 30px $f
+    100%
+        box-shadow: 0 0 5px $f, 0 0 20px $f
+        
+        
